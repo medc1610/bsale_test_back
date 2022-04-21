@@ -1,6 +1,6 @@
 
 // Inicialiacion de variables
-const path = 'http://localhost:3000'
+const path = 'https://bsaletestcart.herokuapp.com/'
 let page = 0
 let shopCart = [] 
 
