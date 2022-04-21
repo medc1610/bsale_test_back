@@ -73,7 +73,7 @@ const getProduct = async(req, res) => {
 ####Respuesta
 
 ```
-id: 7, name: "ENERGETICA SCORE",…}
+id: 7, name: "ENERGETICA SCORE",
 category: 1
 discount: 0
 id: 7
