@@ -11,8 +11,7 @@ const getProducts = async(req, res) => {
 
 const getProductsPagination = async(req, res) => {
 
-    const {page, size} = req.query;
-    
+    const {page, size} = req.query;    
 
     const products = await Product.findAll({
         limit: Number(size),
