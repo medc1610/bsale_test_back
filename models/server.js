@@ -10,13 +10,10 @@ class Server {
         this.productsPath = '/api/products';
         this.categoriesPath = '/api/category';
 
-        //Midlewares
         this.midlewares();
-        
-        //Conexion servidor
+                
         this.dbConnection();
-
-        //Rutas de mi aplicacion 
+         
         this.routes();
     };
 
@@ -34,20 +31,13 @@ class Server {
     }}
 
     midlewares(){
-
-        //Cors
         this.app.use(cors())
-
-        //Directorio Publico
-        this.app.use(express.static('public'));
-        
+        this.app.use(express.static('public'));        
     };
 
-    routes(){
-        
+    routes(){        
         this.app.use(this.productsPath, require('../routes/product'))
         this.app.use(this.categoriesPath, require('../routes/category'))
-
     };
 
     listen(){        
