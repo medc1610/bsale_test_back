@@ -19,6 +19,7 @@ const getProductsPagination = async(req, res) => {
     });
 
     res.json(products);
+    
 };
 
 

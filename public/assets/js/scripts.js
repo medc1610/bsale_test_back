@@ -41,7 +41,7 @@ const showProductsTemplate = (param) => {
                   "</div>" +
                 "</div>" +
                 "<div class=button-cart>" +
-                  "<button class=btn id=addCart onclick=cart('"+ product[i].id +"')>" +
+                  "<button class=btn id=addCart onclick=getProductById('"+ product[i].id +"')>" +
                     "Add to cart" +
                   "</button>" +
                 "</div>" +
@@ -153,17 +153,12 @@ const calculateTotalValue = () => {
   
 }
 
-const cart = (id) => {  
-    calculateTotalValue()
-    getProductById(id)
-}
-
 const showCart = () => {
   const showProducts = localStorage.getItem('product')
   document.getElementById('homeStore').style.display = 'none'
   document.getElementById('productFinderDiv').style.display = 'none'  
   document.getElementById('shopCart').style.display = 'block'
-  showCartTemplate( showProducts )      
+  showCartTemplate( showProducts )    
   calculateTotalValue()  
 }
 
@@ -231,6 +226,30 @@ const getProductById = (id) => {
     .catch(error => console.log('error', error));
 }
   
+const getCategories = () => {
+  const requestOptions = {
+    method: 'GET',
+    redirect: 'follow'
+  };
+  
+  fetch(`${path}/api/category`, requestOptions)
+    .then(response => response.text())
+    .then(result =>{ 
+          console.log(result)
+          result = JSON.parse(result)
+          categoriesTemplate(result)})
+    .catch(error => console.log('error', error));
+}
+
+const categoriesTemplate = (categories) => {
+  let html = ''
+  for(let i in categories){
+    html += "<button class='btn btn-dark mb-3 text-capitalize'  onclick='getCategoryById("+categories[i].id+")'>" + categories[i].name + "</button>"
+  }
+  document.getElementById('categories').innerHTML = html
+  document.getElementById('categories2').innerHTML = html
+}
+
 const getCategoryById = async(id) => {  
   document.getElementById('productFinderDiv').style.display = 'block'
   const requestOptions = {
