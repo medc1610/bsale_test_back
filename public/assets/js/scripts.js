@@ -235,7 +235,6 @@ const getCategories = () => {
   fetch(`${path}/api/category`, requestOptions)
     .then(response => response.text())
     .then(result =>{ 
-          console.log(result)
           result = JSON.parse(result)
           categoriesTemplate(result)})
     .catch(error => console.log('error', error));
