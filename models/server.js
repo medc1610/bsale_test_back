@@ -2,6 +2,10 @@ const express = require('express');
 const cors = require('cors');
 const db = require('../db/conection');
 
+/**
+ * Clase para generar atributos a las diferentes categorias de la base de datos
+ */
+
 class Server {
 
     constructor(){        

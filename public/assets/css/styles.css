@@ -25,6 +25,7 @@ body{
   color: gray;
 }
 
+
 .menu{
 
    position: fixed;
@@ -181,6 +182,18 @@ body{
   height: 50px;  
 }
 
+#noProduct{
+  display: none;
+  margin-top: 150px;
+  border-radius: 10px;
+  padding: 15px;
+  color: #842029;
+  background-color: #f8d7da;
+  border: 1px solid #f5c2c7;
+  text-align: center;
+  
+}
+
 @media(max-width: 980px){
 
   .menu{
@@ -210,5 +223,9 @@ body{
     margin-top: 0px;
     margin-bottom: 50px;
     
+  }
+
+  #noProduct{
+    margin-top: 0px;
   }
 }

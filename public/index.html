@@ -17,8 +17,8 @@
               <a class="navbar-brand" onclick=getPagination(100)><img src=".\assets\img\Bsale.png" ></a>
             <div class="flex-grow-1 " id="productFinderDiv">
               <form class="d-flex flex-grow-1 me-3" action="submit" id="productFinder">
-                <input class="form-control me-2" value="Ingresa tu producto" type="text" name="productName" id="InputSearch" onInput="validarInput()"/>
-                <button class="btn btn-primary" type="submit" name="Search" id="btnValidar">Buscar</button>                
+                <input class="form-control me-2" placeholder="Ingresa tu producto" type="text" name="productName"  required />
+                <button class="btn btn-primary" type="submit"  id="btnValidar">Buscar</button>                
               </form>
             </div>
             <button class="navbar-toggler justify-content-md-start " type="button" onclick="getCategories()" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
@@ -86,14 +86,20 @@
         </div>        
     </div>  
 
+    
+
     <div id="homeStore">
 
       <div class="productFinder2">
         <form class="d-flex flex-grow-1 mb-3" action="submit" id="productFinder2">
-          <input class="form-control me-2" value="Ingresa tu producto" type="text" name="productName" id="InputSearch2" onInput="validarInput2()"/>
+          <input class="form-control me-2" placeholder="Ingresa tu producto" type="text" name="productName"  required/>
           <button class="btn btn-primary" type="submit" name="Search" id="btnValidar2">Buscar</button>                
         </form>
       </div>     
+
+      <div  id="noProduct">
+        Su producto no fue encontrado. Intentelo nuevamente
+      </div>
 
       <section class="products-section">
         <div class="product-card"> 
@@ -102,7 +108,7 @@
         </div> 
       </section>
       
-      <footer aria-label="Page navigation example">
+      <footer aria-label="Page navigation example" id="paginationFooter">
         <ul class="pagination pagination justify-content-end">
           <li class="page-item"><a class="page-link" onclick="getPagination(-1)">Anterior</a></li>        
           <li class="page-item"><a class="page-link" onclick="getPagination(1)">Siguiente</a></li>

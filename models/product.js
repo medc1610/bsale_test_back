@@ -1,6 +1,10 @@
 const { DataTypes } = require('sequelize');
 const db = require('../db/conection');
 
+/**
+ * Se define el tipo de variables que contiene la base de datos con sus nombres en lña categoria de 'product'
+ */
+
 const Product = db.define('product', {
     name: {
         type: DataTypes.STRING
